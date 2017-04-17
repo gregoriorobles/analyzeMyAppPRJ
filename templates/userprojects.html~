@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block content_file %}  
+
+	{% if user.is_authenticated %}
+    		<p> {{ user.username }}</p>
+		<a href="/userprofile/" class="first" >Back</a> 
+		<a href="/logout/" >Logout</a>
+
+		<p> <h2> My projects </h2> </p> 
+		
+		<table width="100%" border="0">
+			<tr>
+				<!-- Displays the user projects to analyze the selected one --> 
+				<form action="/analyze/" method="get">
+					<td width="50%">
+					
+						<!-- List of user's projects --> 
+						{% for project in userProjects %}
+							<input type="radio" name="project" value="{{ project }}"> {{ project }}<br>
+						{% endfor %}
+					</td>
+					<td width="50%">
+
+					<button type="submit" id="analyzeBtn">Lets Analyze!</button> 
+					</td>
+				</form>
+				
+
+			</tr>
+			<tr>	
+				<td width="50%">
+
+					
+
+				</td>
+				<td width="50%">
+				</td>
+			</tr>
+			</table>
+			
+
+
+		
+	{% else %} <!--if user.is_authenticated-->
+		<!--Just in case there are errors-->
+    		<p>Please loggin to analyze your proyects</p>
+		<a href="/" class="first">Login</a>
+		</br>
+	{% endif %} <!--if user.is_authenticated-->
+
+{% endblock %}

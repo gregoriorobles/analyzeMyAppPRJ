@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content_file %}    
+     
+	<p> <h2> Logout </h2> </p>    
+	
+	{% if user.is_authenticated %}
+		<!--Just in case there are errors-->
+    		<p>{{ user.username }} is still logged</p>
+
+	{% else %}
+		<p>Thanks {{ user.username }} </br> Now you are not logged. See you!</p>
+		</br>
+	{% endif %}
+	
+
+{% endblock %}

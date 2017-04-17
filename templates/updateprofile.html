@@ -1,0 +1,36 @@
+<section>
+	<div class="container">
+
+	<div class="row">
+		<div class="col-lg-12 text-center">
+		    <h2 class="section-heading">Your profile</h2>
+		    <h3 class="section-subheading text-muted">Modify and update your data</h3>
+		</div>
+    	</div>
+
+	{% if user.is_authenticated %}
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-3">
+			<form action="/updateprofile/" method="post" enctype="multipart/form-data">{% csrf_token %}
+			    	{{ form.as_p }}
+				{{ profileform.as_p }}
+				</br></br>
+	    			<button type="submit" class="btn btn-xl">Save</button>    
+			</form>
+		</div>
+		<div class="col-md-3">
+			<span class="fa-stack fa-5x" >
+                        <i class="fa fa-paperclip fa-stack-2x" ></i>
+                    </span>
+		</div>
+		<div class="col-md-3">
+		</div>
+
+	{% else %}
+		<!--Just in case there are errors-->
+    		<p>Please loggin to analyze your proyects</p>
+		</br>
+	{% endif %}
+   </div>
+</section>

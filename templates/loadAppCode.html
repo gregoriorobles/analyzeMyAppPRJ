@@ -1,0 +1,46 @@
+<section>
+<div class="container">
+{% if user.is_authenticated %}
+
+	<div class="row">
+		<div class="col-lg-12 text-center">
+		    <h2 class="section-heading">Let's load your code, {{ user.username }}</h2>
+		    <h3 class="section-subheading text-muted">Select the .aia file from your computer</h3>
+		</div>
+    	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-3">
+			{% if fileName %}
+				<!-- Selected file -->
+				<p>Selected file:</br> 
+					{{fileName}}
+				</p>
+			{% else %}
+			<!-- Loading the file from our computer -->
+			<form action="/download/" method="post" enctype="multipart/form-data" class="text-left">{% csrf_token %}
+			    {{ form.as_p }}
+			    </br></br>
+		    	    <button type="submit" class="btn btn-xl">Load and Analyze</button>
+			    
+			</form>
+			</br>
+			{%  endif %}
+		</div>
+		<div class="col-md-3">
+			<span class="fa-stack fa-5x" >
+                        <i class="fa fa-android fa-stack-2x" ></i>
+                   	</span>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+		
+{% else %} <!--user.is_authenticated-->
+	<!--Just in case there are errors-->
+	<p>Please loggin to analyze your proyects</p>
+{% endif %}
+   </div>
+</section>

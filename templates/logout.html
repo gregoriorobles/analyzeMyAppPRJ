@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content_file %}    
+
+	{% if user.is_authenticated %}
+		<!--Just in case there are errors-->
+    		<p>{{ user.username }} is still logged</p>
+
+	{% else %}
+	<h3 class="section-subheading text-muted">
+		<p>Thanks for your visit {{ user.username }} </br> Now you are not logged. See you!</p>
+		<a class="btn btn-xl" href="/login/">Sign in again</a>
+		</br>
+	</h3>
+	{% endif %}
+	
+
+{% endblock %}

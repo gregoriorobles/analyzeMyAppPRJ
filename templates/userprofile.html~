@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block content_file %}  
+
+	{% if user.is_authenticated %}
+    		<p>Select an option {{ user.username }}</p>
+		
+		<a href="/userprojects/" class="first" >My proyects</a> 
+		<a href="/dowload/" >New project</a>  
+		<a href="/updateprofile/" >Update profile</a> 
+		<a href="/logout/" >Logout</a>
+
+	{% else %}
+		<!--Just in case there are errors-->
+    		<p>Please loggin to analyze your proyects</p>
+		<a href="/" class="first">Login</a>
+		</br>
+	{% endif %}
+
+{% endblock %}

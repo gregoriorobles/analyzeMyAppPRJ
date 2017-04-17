@@ -1,0 +1,38 @@
+<section>
+<div class="container">
+	{% if user.is_authenticated %}
+	<div class="row">
+		<div class="col-lg-12 text-center">
+		    <h2 class="section-heading">These are your projects, {{ user.username }}</h2>
+		    <h3 class="section-subheading text-muted">Select one to analyze</h3>
+		</div>
+    	</div>
+
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-3">	
+			<!-- Displays the user projects to analyze the selected one --> 
+			<form action="/analyze/" method="post">
+				<!-- List of user's projects --> 
+				{% for projectLabel, project in userProjects.items %}
+					<input type="radio" name="project" value="{{ project }}"> {{ project }}<br>
+				{% endfor %}
+				</br></br>
+				<button type="submit" id="analyzeBtn" class="btn btn-xl">Lets Analyze!</button> 
+			</form>
+		</div>
+
+		<div class="col-md-3">
+			<span class="fa-stack fa-5x" >
+                        <i class="fa fa-file-code-o fa-stack-2x" ></i>
+		</div>
+		<div class="col-md-3">
+		</div>
+		
+	{% else %} <!--if user.is_authenticated-->
+		<!--Just in case there are errors-->
+    		<p>Please loggin to analyze your proyects</p>
+	{% endif %} <!--if user.is_authenticated-->
+   </div>
+</section>
+

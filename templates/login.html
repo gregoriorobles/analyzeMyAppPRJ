@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content_file %}    
+	
+	{% if user.is_authenticated %}
+    		<p>Hi, {{ user.username }}. You are already logged.</p>
+		<a href="/userprofile/" class="btn btn-xl">Continue</a>
+		<a href="/logout/" class="btn btn-xl">Logout</a>
+
+	{% else %}
+		<!-- Loggin Form -->
+
+		<form action="/" method="post" enctype="multipart/form-data">{% csrf_token %}
+		   	{{ form.as_p }}
+			</br>
+			</br>
+			<div class="col-lg-12 text-center">
+    				<button type="submit" class="btn btn-xl">Sign in</button>
+			</div>
+		</form>
+				
+		{% if msg %}
+			{{ msg }}
+		{% endif %}
+		</br>
+
+	{% endif %}
+	
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content_file %}  
+
+	{% if user.is_authenticated %}
+    		<p> {{ user.username }} UPDATE</p>
+		<a href="/userprofile/" class="first" >Back</a> 
+		<a href="/logout/" >Logout</a>
+		</br>
+
+		{% if msg %}
+			{{ msg }}
+		{% endif %}
+
+		<form action="/updateprofile/" method="post" enctype="multipart/form-data">{% csrf_token %}
+		    	{{ form.as_p }}
+			{{ profileform.as_p }}
+    			<button type="submit" class="save btn btn-default">Save</button>    
+		</form>
+		
+
+	{% else %}
+		<!--Just in case there are errors-->
+    		<p>Please loggin to analyze your proyects</p>
+		<a href="/" class="first">Login</a>
+		</br>
+	{% endif %}
+
+{% endblock %}
