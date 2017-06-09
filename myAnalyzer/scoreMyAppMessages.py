@@ -269,7 +269,7 @@ def getScoreMsgs(score):
     elif score['ScreensLevels']['Score'] == 2:
         sched_score_msg = 'Your app usability has a MEDIUM score. Maybe you can include some additional screens to improve the user experience'
     else:
-        sched_score_msg = 'Your app usability has a LOW score. More screens doesn"t imply better user experience, try to simplify your app'
+        sched_score_msg = "Your app usability has a LOW score. Try to optimize the number of screens between 2 and 10 for a better user experience"
 
 
     #### Components info ####

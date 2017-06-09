@@ -133,24 +133,6 @@ def doLoadScreens(username, user_id,project):
                 selectedProject.screens.add(scr)
                 selectedProject.save()
               
-        '''for n in range (1,nScreens+1):
-            
-            bkyN = 'Screen'+str(n)+'.bky'
-            f = open(os.path.join(prjFolder,bkyN),'r')
-            filecontent = f.read()
-            f.close()
-            
-            scmN =  'Screen'+str(n)+'.scm'
-            f = open(os.path.join(prjFolder,scmN),'r')
-            filecontent2 = f.read()
-            f.close()
-            
-            scr_id = str(user_id) + '_' + projectName + '_' + str(n) #user.id_filename.name_Screen number
-            scr = Screens(scrID=scr_id,bky=filecontent,scm=filecontent2)
-            scr.save()
-            selectedProject.screens.add(scr)
-            selectedProject.save()
-        '''  
     return str(prjFolder)  
 
 
