@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Analyze My App</title>
+	<style type="text/css">
+		{{css}}
+	</style>
+</head>
+<body>
+
+	<div align="center">
+		<div id="logo">
+               		<h1>My Analyzer</h1>
+          	</div>
+	</div>
+
+	<hr id="line"/>
+
+	<!-- #menu -->
+	<div id="menu" align = "center">
+		<a href="/" class="first">Home</a>
+
+	</div>
+	<!-- end #menu -->
+
+	<!-- #page -->
+	<div id="page">
+
+		{% block content_file %}
+
+               	{% endblock %}
+
+		{% block content_code %}
+
+               	{% endblock %}
+
+
+	</div>
+	<!-- end #page -->
+
+     	</br>
+     	</br>
+     	</br>
+     	<hr id="line"/>
+
+	<!-- #footer -->
+	<div id="footer" align = "center">
+		<p>Copyright (c) 2016 URJC All rights reserved. Design by Alexandra Ortega</p>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+	</div>
+	<!-- end #footer -->
+
+</body>
+</html>
