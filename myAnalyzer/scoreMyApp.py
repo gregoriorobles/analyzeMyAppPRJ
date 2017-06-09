@@ -216,6 +216,7 @@ def variable_control(root,namespace,typeList):
     FC3 = filter(r.match,typeList)
 
     # Count the number of occurrences for every level
+    
     c1 = {'variable':sum(FC1)}
     c2 = dict(Counter(FC2))
     c3 = dict(Counter(FC3))
@@ -225,7 +226,7 @@ def variable_control(root,namespace,typeList):
         score = 2
     else:
         score = 1
-        
+
     results = {'Score':score,
                'Variable': c1,
                'Math': c2,
